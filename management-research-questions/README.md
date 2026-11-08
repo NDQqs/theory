@@ -12,4 +12,4 @@
 - README.md：本文件夹的中文介绍及网页内容说明。
 网页访问地址：
 
-https://ndqqs.github.io/theory/msquestion/Management Research Questions
+https://ndqqs.github.io/theory/msquestion/

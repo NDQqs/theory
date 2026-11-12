@@ -1,1 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wiseman & Gomez-Mejia（1998）行为代理模型九组理论命题及六个重要限定条件">
+  <title>行为代理模型（BAM）——九组理论命题与六个重要限定条件</title>
+  <style>
+    :root {
+      --ink: #202938;
+      --muted: #64748b;
+      --line: #dce3ec;
+      --head: #edf2f8;
+      --accent: #315b86;
+      --accent-soft: #eaf1f8;
+      --paper: #ffffff;
+      --page: #f4f6f9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--page);
+      font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+      line-height: 1.7;
+    }
+    .container { max-width: 1600px; margin: 0 auto; padding: 36px 28px 56px; }
+    header { margin-bottom: 28px; }
+    .eyebrow { color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: .08em; }
+    h1 { margin: 8px 0 10px; font-size: clamp(25px, 3vw, 36px); line-height: 1.3; }
+    .subtitle { color: var(--muted); margin: 0; font-size: 15px; }
+    .intro {
+      margin-top: 20px; padding: 16px 18px; border-left: 4px solid var(--accent);
+      background: var(--accent-soft); border-radius: 0 8px 8px 0;
+    }
+    section { margin-top: 38px; }
+    h2 { margin: 0 0 8px; font-size: 23px; line-height: 1.4; }
+    .section-note { margin: 0 0 16px; color: var(--muted); font-size: 13px; }
+    .table-wrap {
+      overflow-x: auto; background: var(--paper); border: 1px solid var(--line);
+      border-radius: 10px; box-shadow: 0 2px 10px rgba(25, 42, 70, .04);
+    }
+    table { width: 100%; border-collapse: collapse; min-width: 1050px; }
+    table.second { min-width: 1000px; }
+    thead th {
+      position: sticky; top: 0; z-index: 1; background: var(--head); color: #26384d;
+      text-align: left; font-size: 14px; font-weight: 700; padding: 14px 15px;
+      border-bottom: 1px solid var(--line); white-space: nowrap;
+    }
+    tbody td { padding: 14px 15px; vertical-align: top; border-bottom: 1px solid #e8edf3; font-size: 14px; }
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: #fafcff; }
+    .code { width: 76px; min-width: 76px; font-weight: 700; color: var(--accent); white-space: nowrap; }
+    .topic { width: 150px; min-width: 140px; font-weight: 600; }
+    .proposition { width: 42%; min-width: 390px; }
+    .mechanism { width: 45%; min-width: 430px; }
+    .number { width: 56px; min-width: 56px; font-weight: 700; color: var(--accent); text-align: center; }
+    .condition { width: 34%; min-width: 310px; }
+    .avoid { width: 34%; min-width: 310px; }
+    .source-note { margin-top: 12px; color: var(--muted); font-size: 12px; }
+    .footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    @media (max-width: 700px) {
+      .container { padding: 24px 14px 40px; }
+      .intro { font-size: 14px; }
+      h2 { font-size: 20px; }
+    }
+    @media print {
+      body { background: #fff; }
+      .container { max-width: none; padding: 0; }
+      .table-wrap { overflow: visible; box-shadow: none; border: 0; }
+      table, table.second { min-width: 0; font-size: 10pt; }
+      thead th { position: static; }
+      tbody td, thead th { padding: 7px; font-size: 9pt; }
+      section { break-inside: avoid; }
+      tr { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div class="eyebrow">THEORETICAL NOTES · BEHAVIORAL AGENCY MODEL</div>
+      <h1>行为代理模型（BAM）：九组理论命题与六个重要限定条件</h1>
+      <p class="subtitle">Wiseman &amp; Gomez-Mejia（1998）｜A Behavioral Agency Model of Managerial Risk Taking</p>
+      <div class="intro">
+        本页面整理论文中的九组理论命题（P1—P9）。其中第3—8组包含 a、b 子命题，因此共有14条具体命题表述。第一张表用于理解作者提出的命题及其作用机制；第二张表用于把握命题成立时的重要限定，避免过度推论。
+      </div>
+    </header>
+
+    <section>
+      <h2>表一：行为代理模型（BAM）的九组理论命题及作用机制</h2>
+      <p class="section-note">依据原文第137—145页整理。中文为忠实翻译与概括；机制说明用于帮助理解，不代表作者另行提出了新的命题。</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>命题</th>
+              <th>理论主题</th>
+              <th>原文命题（忠实概括）</th>
+              <th>作用机制与具体含义</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="code">P1</td>
+              <td class="topic">问题框架与风险承担</td>
+              <td class="proposition">当管理者个人财富与企业绩效联系越紧密时，风险承受就越会部分中介问题框架对风险承担行为的影响。正向（收益）框架提高风险承受，而风险承受反过来负向影响风险承担。</td>
+              <td class="mechanism">管理者处于收益情境时，会更加在意保护预期获得的个人财富，因此感知到更高的个人财富风险，进而倾向于采取较低风险的企业战略。风险承受发挥的是<strong>部分中介作用</strong>。</td>
+            </tr>
+            <tr>
+              <td class="code">P2</td>
+              <td class="topic">历史绩效与参照点</td>
+              <td class="proposition">企业绩效随时间持续上升，会提高管理者对未来企业绩效的期望（Aspirations），从而降低管理者处于收益情境（Gain Context）的可能性。</td>
+              <td class="mechanism">过去的良好绩效会逐渐提高管理者的期望和参照点。即使当前绩效仍在增长，也可能因为期望提高而不再被视为收益。</td>
+            </tr>
+            <tr>
+              <td class="code">P3a</td>
+              <td class="topic">基本薪酬与风险承受</td>
+              <td class="proposition">管理者的风险承受来源于对未来基本薪酬以及基本薪酬预期调整的损失威胁。</td>
+              <td class="mechanism">管理者将未来基本工资、预期加薪等纳入当前感知财富。当未来基本薪酬或就业安全受到威胁时，会形成个人财富风险。</td>
+            </tr>
+            <tr>
+              <td class="code">P3b</td>
+              <td class="topic">基本薪酬与风险承受</td>
+              <td class="proposition">未来基本薪酬在多大程度上能够免受损失威胁，管理者的风险承受就会在多大程度上降低；因此，管理者可能更愿意通过风险较高的战略选择来追求浮动薪酬。</td>
+              <td class="mechanism">如果管理者知道追求绩效奖金不会威胁基本工资和就业安全，就可能更愿意采取风险较高的战略来争取浮动薪酬。</td>
+            </tr>
+            <tr>
+              <td class="code">P4a</td>
+              <td class="topic">增加浮动薪酬（Layering）</td>
+              <td class="proposition">通过 Layering 增加总薪酬中的浮动薪酬，不会影响管理者的风险承受。</td>
+              <td class="mechanism">在不改变原有基本薪酬的情况下增加浮动薪酬，不会威胁管理者已经纳入感知财富的基本收入，因此不会因此增加其风险承受。</td>
+            </tr>
+            <tr>
+              <td class="code">P4b</td>
+              <td class="topic">薪酬结构重构（Restructuring）</td>
+              <td class="proposition">通过 Restructuring 将基本薪酬转变为浮动薪酬，会使管理者产生感知到的损失。</td>
+              <td class="mechanism">原本确定的基本薪酬已经被纳入管理者的感知财富。将其转换成不确定的浮动薪酬，相当于使原有确定收入受到威胁，从而形成损失感知。</td>
+            </tr>
+            <tr>
+              <td class="code">P5a</td>
+              <td class="topic">股票期权设计</td>
+              <td class="proposition">尚未行权但具有正价值的股票期权，会使管理者产生风险承受，并最终提高管理者的风险厌恶。</td>
+              <td class="mechanism">管理者可能通过即时禀赋（Instant Endowment）机制，将已经授予但尚未行权的正价值期权纳入感知财富。由于期权价值可能因企业经营风险而下降，管理者会倾向于保护已有期权价值。</td>
+            </tr>
+            <tr>
+              <td class="code">P5b</td>
+              <td class="topic">股票期权设计</td>
+              <td class="proposition">当股票期权的下行风险被设定为零时，股票期权不会给管理者造成风险承受。</td>
+              <td class="mechanism">如果期权价值不会因为相关风险而遭受损失，就不会产生 P5a 所说的个人财富风险，也不会通过这一机制提高管理者的风险厌恶。</td>
+            </tr>
+            <tr>
+              <td class="code">P6a</td>
+              <td class="topic">绩效目标难度</td>
+              <td class="proposition">较高的浮动薪酬绩效目标，会提高管理者面临损失决策情境的概率，并最终增加管理者的风险承担行为。</td>
+              <td class="mechanism">较高的绩效目标提高管理者的业绩参照点，使其更容易认为自己处于损失情境，进而可能通过更高风险的战略争取实现目标。</td>
+            </tr>
+            <tr>
+              <td class="code">P6b</td>
+              <td class="topic">绩效目标动态调整</td>
+              <td class="proposition">浮动薪酬绩效目标必须随着企业绩效进行调整，以确保管理者持续面对损失决策情境。</td>
+              <td class="mechanism">如果企业绩效不断改善，但目标不调整，原本困难的目标可能变得容易，管理者就可能从损失情境转向收益情境。因此，需要根据绩效变化调整目标。</td>
+            </tr>
+            <tr>
+              <td class="code">P7a</td>
+              <td class="topic">外部绩效评价指标</td>
+              <td class="proposition">依赖市场化（外部）结果绩效指标，会提高管理者处于损失情境的概率。</td>
+              <td class="mechanism">市场指标容易受到管理者无法控制的外部因素影响，使管理者更难确信自己能够实现目标，因此更容易形成损失框架。</td>
+            </tr>
+            <tr>
+              <td class="code">P7b</td>
+              <td class="topic">内部绩效评价指标</td>
+              <td class="proposition">依赖会计化（内部）结果绩效指标，会提高管理者处于收益情境的概率。</td>
+              <td class="mechanism">管理者通常认为会计指标比市场指标更容易控制，因此对实现目标更有信心，更容易形成收益框架。</td>
+            </tr>
+            <tr>
+              <td class="code">P8a</td>
+              <td class="topic">董事会直接监督</td>
+              <td class="proposition">董事会对管理者的监督越强，对应的绩效目标越困难。</td>
+              <td class="mechanism">积极的董事会监督会影响绩效目标的设定。董事会设定的目标通常比管理者自己希望设定的目标更困难。</td>
+            </tr>
+            <tr>
+              <td class="code">P8b</td>
+              <td class="topic">董事会直接监督</td>
+              <td class="proposition">董事会对管理者的监督越弱，对应的绩效目标越容易。</td>
+              <td class="mechanism">缺乏积极监督时，管理者更可能按照自身利益设定容易实现的绩效目标，以降低就业风险并提高获得浮动薪酬的可能性。</td>
+            </tr>
+            <tr>
+              <td class="code">P9</td>
+              <td class="topic">行为评价标准</td>
+              <td class="proposition">董事会使用行为评价标准，会使管理者无法确定自己的绩效将如何被评价，从而增加管理者的风险承受，并最终降低管理者的风险承担行为。</td>
+              <td class="mechanism">行为评价标准具有主观性，管理者事前难以预测董事会如何评价自己的行为，因此感知到更大的个人风险，最终倾向于选择风险较低的企业战略。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source-note">原文依据：Wiseman &amp; Gomez-Mejia（1998），pp. 137–145，Propositions 1–9。</p>
+    </section>
+
+    <section>
+      <h2>表二：九组命题的六个特别重要的限定条件</h2>
+      <p class="section-note">“不能简单理解为”一栏是对理论边界的归纳，用于避免将作者的条件性命题扩大解释为普遍规律。</p>
+      <div class="table-wrap">
+        <table class="second">
+          <thead>
+            <tr>
+              <th>序号</th>
+              <th>对应命题</th>
+              <th>原文中的重要限定条件</th>
+              <th>不能简单理解为</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="number">1</td>
+              <td class="topic">P1</td>
+              <td class="condition">问题框架影响风险承担的机制，以管理者个人财富与企业绩效之间存在联系为前提；风险承受发挥的是<strong>部分中介作用</strong>。</td>
+              <td class="avoid">所有管理者只要处于收益情境，就必然降低风险承担；或者风险承受完全解释问题框架与风险承担之间的关系。</td>
+            </tr>
+            <tr>
+              <td class="number">2</td>
+              <td class="topic">P2</td>
+              <td class="condition">作者讨论的是企业绩效<strong>随时间持续上升</strong>导致管理者期望提高的动态过程，重点是参照点随历史绩效变化。</td>
+              <td class="avoid">企业绩效越好，管理者就一定越保守；或者只要当期绩效高，就必然处于收益情境。</td>
+            </tr>
+            <tr>
+              <td class="number">3</td>
+              <td class="topic">P3a、P3b、P4a、P4b</td>
+              <td class="condition">必须区分基本薪酬与浮动薪酬，以及增加浮动薪酬（Layering）和将基本薪酬转换为浮动薪酬（Restructuring）。前者不影响风险承受，后者可能产生感知损失。</td>
+              <td class="avoid">浮动薪酬比例越高，管理者就一定越保守；或者增加浮动薪酬与削减基本薪酬具有相同的心理效果。</td>
+            </tr>
+            <tr>
+              <td class="number">4</td>
+              <td class="topic">P5a、P5b</td>
+              <td class="condition">P5a讨论的是<strong>尚未行权、具有正价值且存在下行风险的股票期权</strong>；P5b指出，当期权下行风险为零时，不会形成相应的风险承受。</td>
+              <td class="avoid">所有股票期权都会增加管理者的风险厌恶；或者股票期权必然降低企业风险承担。</td>
+            </tr>
+            <tr>
+              <td class="number">5</td>
+              <td class="topic">P6a、P6b、P7a、P7b</td>
+              <td class="condition">绩效目标难度和绩效评价指标主要通过影响管理者的问题框架发挥作用。作者关于内部与外部指标的判断，还涉及管理者对指标可控性和目标实现可能性的预期。</td>
+              <td class="avoid">只要提高绩效目标，就必然增加风险承担；或者会计指标一定导致风险承担下降、市场指标一定导致风险承担上升。</td>
+            </tr>
+            <tr>
+              <td class="number">6</td>
+              <td class="topic">P8a、P8b、P9</td>
+              <td class="condition">必须区分董事会直接监督与行为评价标准。前者通过影响绩效目标难度发挥作用；后者通过评价标准的不确定性增加管理者的风险承受，进而降低风险承担。</td>
+              <td class="avoid">董事会监督越强，企业风险承担就一定越低；或者所有形式的董事会监督都会产生相同影响。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source-note">原文依据：Wiseman &amp; Gomez-Mejia（1998），pp. 137–145。表中“不能简单理解为”是对原文理论边界的归纳，而非作者逐字表述。</p>
+    </section>
+
+    <footer class="footer">
+      说明：本文件将两张理论整理表合并呈现。表格内容沿用前述整理版本；原文命题的中文表述属于翻译与概括，具体引用时建议同时核对论文原文。
+    </footer>
+  </main>
+</body>
+</html>
 

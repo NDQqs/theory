@@ -1,1 +1,266 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="David and Han (2004) 对交易成本经济学中资产专用性、不确定性和交易成本测量方式的系统整理。">
+<title>交易成本经济学核心变量的测量｜index</title>
+<style>
+:root {
+  --ink:#1d2939; --muted:#667085; --line:#e5e9f0; --paper:#f6f8fb;
+  --card:#fff; --blue:#285f91; --blue-soft:#edf4fb; --teal:#167d78;
+  --gold:#9b6a19; --red:#a33d3d; --shadow:0 10px 28px rgba(16,24,40,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"Microsoft YaHei","PingFang SC",Arial,sans-serif;line-height:1.65}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{width:min(1180px,calc(100% - 36px));margin:0 auto}
+.hero{background:linear-gradient(135deg,#102b46,#285f91 68%,#397c91);color:#fff;padding:48px 0 34px}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#c7d9ea;font-weight:700}
+h1{font-size:clamp(28px,4vw,42px);line-height:1.2;margin:12px 0 12px;letter-spacing:-.03em}
+.subtitle{max-width:850px;color:#e0ebf5;font-size:15px;margin:0}
+.meta{margin-top:18px;color:#c9d9e8;font-size:13px}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.metric{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:15px 17px;backdrop-filter:blur(5px)}
+.metric .label{font-size:12px;color:#d7e4ef}
+.metric strong{display:block;font-size:28px;line-height:1.2;margin:4px 0}
+.metric small{font-size:12px;color:#d7e4ef}
+.nav-shell{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;gap:8px;align-items:center;overflow-x:auto;padding:12px 0;white-space:nowrap}
+nav a{padding:8px 13px;border-radius:999px;color:#344054;font-size:13px;font-weight:650}
+nav a:hover{background:var(--blue-soft);text-decoration:none}
+main{padding:28px 0 60px}
+.intro,.section,.note-card,.source-card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+.intro{padding:22px 24px;margin-bottom:22px}
+.intro h2{margin:0 0 8px;font-size:19px}
+.intro p{margin:6px 0;color:#475467}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:13px}
+.legend span{font-size:12px;padding:6px 10px;border-radius:8px;background:#f1f5f9;color:#475467}
+.section{padding:25px 24px;margin:22px 0;scroll-margin-top:82px}
+.section-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+.num-badge{flex:0 0 38px;height:38px;border-radius:12px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-weight:800}
+h2{font-size:24px;line-height:1.3;margin:0 0 5px}
+.section-desc{margin:0;color:var(--muted);font-size:14px}
+.table-title{font-size:15px;font-weight:750;margin:14px 0 10px}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:12px 0 18px}
+table{width:100%;border-collapse:collapse;min-width:850px;font-size:13px}
+thead th{position:sticky;top:0;background:#f1f5f9;color:#344054;text-align:left;padding:12px 11px;border-bottom:1px solid #dce3ec;white-space:nowrap}
+thead th:not(:first-child),td.num{text-align:center}
+thead small{font-weight:500;color:#667085;font-size:11px}
+tbody td{padding:9px 11px;border-bottom:1px solid #edf0f4;vertical-align:middle}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover:not(.group):not(.total):not(.subtotal){background:#fafcff}
+.en{display:block;font-weight:620;color:#25364a}
+.zh{display:block;color:#667085;font-size:12px;margin-top:2px}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.rate{font-weight:750;color:var(--blue)}
+.group th{text-align:left;background:#f7f9fc;color:#31516e;padding:10px 11px;border-top:1px solid var(--line);font-size:12px;letter-spacing:.02em}
+.subtotal td{background:#f7f9fc;font-weight:750;color:#344054}
+.total td{background:#eaf2fa;font-weight:800;color:#173c60;border-top:2px solid #cbd9e8}
+.findings{margin-top:22px;padding:18px 19px;border-radius:14px;background:#f7fafc;border:1px solid #e3ebf3}
+.findings h3{margin:0 0 10px;font-size:17px}
+.findings ul{margin:8px 0 0;padding-left:21px}
+.findings li{margin:8px 0;color:#344054}
+.findings strong{color:#203d5a}
+.source-page{font-size:11px;color:#7a8797;margin-top:10px}
+.callout{border-left:4px solid var(--gold);background:#fffaf0;padding:13px 15px;border-radius:0 10px 10px 0;margin-top:14px;color:#614b25;font-size:13px}
+.data-note{border-left:4px solid var(--red);background:#fff6f5;padding:13px 15px;border-radius:0 10px 10px 0;margin-top:13px;color:#773b37;font-size:13px}
+.source-card{padding:20px 23px;margin-top:22px}
+.source-card h3{margin:0 0 8px;font-size:16px}
+.source-card p{margin:5px 0;color:#475467;font-size:13px}
+footer{padding:20px 0 35px;color:#7a8797;font-size:12px;text-align:center}
+@media(max-width:720px){
+ .wrap{width:min(100% - 22px,1180px)}
+ .hero{padding:34px 0 25px}
+ .metrics{grid-template-columns:1fr;gap:9px}
+ .metric{padding:12px 15px}
+ .metric strong{font-size:24px}
+ .section{padding:19px 14px}
+ .intro{padding:18px 16px}
+ h2{font-size:21px}
+}
+@media print{
+ body{background:#fff}
+ .nav-shell{position:static}
+ .hero{background:#fff;color:#111;padding:20px 0}
+ .subtitle,.meta,.eyebrow,.metric .label,.metric small{color:#444}
+ .metric{background:#fff;border:1px solid #ddd;color:#111}
+ .section,.intro,.source-card{box-shadow:none;break-inside:avoid}
+ .table-wrap{overflow:visible}
+ table{min-width:0;font-size:10px}
+ thead th{position:static}
+ nav{display:none}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Transaction Cost Economics · Measurement Review</div>
+    <h1>交易成本经济学核心变量的测量</h1>
+    <p class="subtitle">根据 David &amp; Han（2004）《A Systematic Assessment of the Empirical Support for Transaction Cost Economics》整理，集中呈现资产专用性、不确定性与交易成本三类自变量的测量指标，以及作者在正文中对相应表格的解释和重要发现。</p>
+    <div class="meta">原文表格：Table 4（p.49）· Table 5（p.50）· Table 6（p.50）</div>
+    <div class="metrics">
+      <div class="metric"><span class="label">1｜资产专用性 Asset Specificity</span><strong>60%</strong><small>107项检验 · 27种测量方式</small></div>
+      <div class="metric"><span class="label">2｜不确定性 Uncertainty</span><strong>24%</strong><small>87项检验 · 23种测量方式</small></div>
+      <div class="metric"><span class="label">3｜交易成本 Transaction Costs</span><strong>45%</strong><small>51项检验 · Table 6所列测量项目</small></div>
+    </div>
+  </div>
+</header>
+
+<div class="nav-shell">
+  <div class="wrap">
+    <nav aria-label="页面导航">
+      <a href="#asset">1. 资产专用性</a>
+      <a href="#uncertainty">2. 不确定性</a>
+      <a href="#transaction">3. 交易成本</a>
+      <a href="#notes">数据说明与文献来源</a>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="intro">
+    <h2>如何阅读这些表格</h2>
+    <p>表格保留论文中的英文测量指标，并在其下方提供中文译名。检验数量及百分比按照原文表格转录；作者对表格的解释则根据论文正文相关段落整理。</p>
+    <div class="legend">
+      <span><b># Tests</b>：统计检验数量</span>
+      <span><b># Supported</b>：支持TCE预测的检验数量</span>
+      <span><b>% Supported</b>：支持率</span>
+      <span><b># Counter</b>：与TCE预测方向相反的检验数量</span>
+      <span><b>% Counter</b>：反向结果比例</span>
+    </div>
+    <p style="margin-top:12px">作者以 <b>p &lt; 0.05</b> 作为统计支持的显著性标准。支持指结果达到统计显著且方向符合TCE预测；反向结果指显著方向与理论预测相反。其余检验未达到该支持标准，不应直接等同于理论被否定。</p>
+  </section>
+
+  <section class="section" id="asset">
+    <div class="section-head">
+      <div class="num-badge">01</div>
+      <div>
+        <h2>资产专用性（Asset Specificity）的测量</h2>
+        <p class="section-desc">原文 Table 4 · Asset specificity as an independent variable · 第49页</p>
+      </div>
+    </div>
+    <p>作者在样本文献中识别出 <b>27种资产专用性的测量方式</b>。下表按照原文分类呈现各项指标及其统计检验结果。</p>
+    
+    <div class="table-wrap">
+      <table id="asset-table">
+        <thead><tr>
+          <th>测量指标（英文原文／中文译名）</th>
+          <th># Tests<br><small>检验数</small></th>
+          <th># Supported<br><small>支持数</small></th>
+          <th>% Supported<br><small>支持率</small></th>
+          <th># Counter<br><small>反向结果数</small></th>
+          <th>% Counter<br><small>反向结果率</small></th>
+        </tr></thead>
+        <tbody><tr class="group"><th colspan="6">Human assets｜人力资产</th></tr><tr class=""><td><span class="en">Specialized skills</span><span class="zh">专门技能</span></td><td class="num">12</td><td class="num">9</td><td class="num rate">75%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Training needs</span><span class="zh">培训需求</span></td><td class="num">5</td><td class="num">2</td><td class="num rate">40%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Complexity of firm, product, or process</span><span class="zh">企业、产品或流程的复杂性</span></td><td class="num">5</td><td class="num">2</td><td class="num rate">40%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Coordination needs between buyer and supplier</span><span class="zh">买方与供应商之间的协调需求</span></td><td class="num">7</td><td class="num">4</td><td class="num rate">57%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Importance of key buyers</span><span class="zh">关键买方的重要性</span></td><td class="num">1</td><td class="num">0</td><td class="num rate">0%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Buyer loyalty</span><span class="zh">买方忠诚度</span></td><td class="num">1</td><td class="num">1</td><td class="num rate">100%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Confidentiality of information</span><span class="zh">信息保密性</span></td><td class="num">1</td><td class="num">0</td><td class="num rate">0%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Buyer heterogeneity</span><span class="zh">买方异质性</span></td><td class="num">4</td><td class="num">2</td><td class="num rate">50%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Lock in to incumbent suppliers</span><span class="zh">对现有供应商的锁定</span></td><td class="num">1</td><td class="num">1</td><td class="num rate">100%</td><td class="num">0</td><td class="num">0%</td></tr><tr class="subtotal"><td>Subtotal｜小计</td><td class="num">37</td><td class="num">21</td><td class="num rate">57%</td><td class="num">0</td><td class="num">0%</td></tr><tr class="group"><th colspan="6">Physical assets｜物质资产</th></tr><tr class=""><td><span class="en">Specialized assets for production</span><span class="zh">生产专用资产</span></td><td class="num">17</td><td class="num">9</td><td class="num rate">53%</td><td class="num">4</td><td class="num">24%</td></tr><tr class=""><td><span class="en">Technological complexity</span><span class="zh">技术复杂性</span></td><td class="num">4</td><td class="num">1</td><td class="num rate">25%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Technological tacitness</span><span class="zh">技术的隐性程度</span></td><td class="num">3</td><td class="num">1</td><td class="num rate">33%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Sunk costs in plant and equipment</span><span class="zh">厂房和设备的沉没成本</span></td><td class="num">4</td><td class="num">4</td><td class="num rate">100%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">R&amp;D to sales ratio</span><span class="zh">研发支出占销售收入的比例</span></td><td class="num">1</td><td class="num">1</td><td class="num rate">100%</td><td class="num">0</td><td class="num">0%</td></tr><tr class="subtotal"><td>Subtotal｜小计</td><td class="num">29</td><td class="num">16</td><td class="num rate">55%</td><td class="num">4</td><td class="num">14%</td></tr><tr class="group"><th colspan="6">Human and physical assets｜人力与物质资产</th></tr><tr class=""><td><span class="en">Composite measure of specialized assets and knowledge</span><span class="zh">专用资产与知识的综合指标</span></td><td class="num">17</td><td class="num">11</td><td class="num rate">65%</td><td class="num">3</td><td class="num">18%</td></tr><tr class="subtotal"><td>Subtotal｜小计</td><td class="num">17</td><td class="num">11</td><td class="num rate">65%</td><td class="num">0</td><td class="num">0%</td></tr><tr class="group"><th colspan="6">Product｜产品</th></tr><tr class=""><td><span class="en">Customized final product</span><span class="zh">定制化最终产品</span></td><td class="num">4</td><td class="num">3</td><td class="num rate">75%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Customized input component</span><span class="zh">定制化投入部件</span></td><td class="num">3</td><td class="num">3</td><td class="num rate">100%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Development cost of final product</span><span class="zh">最终产品开发成本</span></td><td class="num">1</td><td class="num">1</td><td class="num rate">100%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Importance of product to buyers</span><span class="zh">产品对买方的重要性</span></td><td class="num">1</td><td class="num">1</td><td class="num rate">100%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Importance of ancillary services to buyers</span><span class="zh">附属服务对买方的重要性</span></td><td class="num">1</td><td class="num">1</td><td class="num rate">100%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Typical dollar amount of transaction</span><span class="zh">典型交易金额</span></td><td class="num">1</td><td class="num">1</td><td class="num rate">100%</td><td class="num">0</td><td class="num">0%</td></tr><tr class="subtotal"><td>Subtotal｜小计</td><td class="num">11</td><td class="num">10</td><td class="num rate">91%</td><td class="num">0</td><td class="num">0%</td></tr><tr class="group"><th colspan="6">Site｜厂址</th></tr><tr class=""><td><span class="en">Gaseous input</span><span class="zh">气态投入品</span></td><td class="num">4</td><td class="num">1</td><td class="num rate">25%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Proportion of inputs shipped within 500 miles of plant</span><span class="zh">在工厂500英里范围内运输的投入品比例</span></td><td class="num">1</td><td class="num">0</td><td class="num rate">0%</td><td class="num">0</td><td class="num">0%</td></tr><tr class="subtotal"><td>Subtotal｜小计</td><td class="num">5</td><td class="num">1</td><td class="num rate">20%</td><td class="num">0</td><td class="num">0%</td></tr><tr class="group"><th colspan="6">Firm｜企业</th></tr><tr class=""><td><span class="en">Complexity of IT in business segment</span><span class="zh">业务部门信息技术的复杂性</span></td><td class="num">3</td><td class="num">2</td><td class="num rate">67%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Strategic importance of business segment to firm</span><span class="zh">业务部门对企业的战略重要性</span></td><td class="num">2</td><td class="num">1</td><td class="num rate">50%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Advertising to sales ratio</span><span class="zh">广告支出占销售收入的比例</span></td><td class="num">2</td><td class="num">1</td><td class="num rate">50%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Brand equity of firm</span><span class="zh">企业品牌资产</span></td><td class="num">1</td><td class="num">1</td><td class="num rate">100%</td><td class="num">0</td><td class="num">0%</td></tr><tr class="subtotal"><td>Subtotal｜小计</td><td class="num">8</td><td class="num">5</td><td class="num rate">63%</td><td class="num">0</td><td class="num">0%</td></tr><tr class="total"><td>合计 / Total</td><td class="num">107</td><td class="num">64</td><td class="num rate">60%</td><td class="num">4</td><td class="num">4%</td></tr></tbody>
+      </table>
+    </div>
+    
+    <div class="findings">
+      <h3>作者对 Table 4 的重要结论</h3>
+      <ul>
+        <li><strong>测量方式具有明显多样性。</strong>作者共识别出27种资产专用性测量方式。出现较多的测量包括：生产专用资产（17项检验）、专门技能（12项检验），以及专用资产与技能／知识的综合测量（17项检验）。</li>
+        <li><strong>实证支持程度会随操作化方式而变化。</strong>专门技能的支持率为75%；专用物质资产的支持率为53%；专用资产与技能／知识综合测量的支持率为65%。</li>
+        <li><strong>专门技能的研究例子。</strong>Monteverde（1995）发现，体现专门知识需求的特定词汇，与半导体行业产品开发和制造活动的纵向一体化相关。</li>
+        <li><strong>专用物质资产的研究例子。</strong>Coles和Hesterly（1998a）发现，对专门设计设备的需求，与私立医院在内部提供某项服务呈正向关系。</li>
+        <li><strong>综合测量的研究例子。</strong>Klein等人（1990）发现，专用资产与技能／知识的综合测量，与企业选择全资子公司而非独立分销商相关。</li>
+        <li><strong>从全文结果看，资产专用性是表现相对较好的核心自变量。</strong>作者在讨论中指出，资产专用性对“层级治理还是市场治理”的选择有58%的支持率；对独立买卖双方一体化程度的预测，支持率达到79%。这两项是全文主要变量关系的统计结果，并非 Table 4 的分类小计。</li>
+      </ul>
+      <div class="source-page">作者正文讨论：David &amp; Han（2004），pp.47–48、p.52；表格数据：Table 4，p.49。</div>
+    </div>
+    <div class="data-note"><strong>原表数据一致性提示：</strong>Table 4中“专用资产与知识的综合指标”这一行印有 # Counter = 3、% Counter = 18%，但其下方小计行印为 0、0%，而总计行仍为 4、4%。这些数字在原表内部并不一致。本网页保留原文各行印刷值，不擅自更正或重新计算；使用反向结果列时请注意这一点。</div>
+  </section>
+
+  <section class="section" id="uncertainty">
+    <div class="section-head">
+      <div class="num-badge">02</div>
+      <div>
+        <h2>不确定性（Uncertainty）的测量</h2>
+        <p class="section-desc">原文 Table 5 · Uncertainty as an independent variable · 第50页</p>
+      </div>
+    </div>
+    <p>作者发现，既有研究使用了 <b>23种不同方式</b>操作化不确定性，其中13种可以归入市场条件、技术和行为三个较大的类别。其他指标在原表中单独列示。</p>
+    
+    <div class="table-wrap">
+      <table id="uncertainty-table">
+        <thead><tr>
+          <th>测量指标（英文原文／中文译名）</th>
+          <th># Tests<br><small>检验数</small></th>
+          <th># Supported<br><small>支持数</small></th>
+          <th>% Supported<br><small>支持率</small></th>
+          <th># Counter<br><small>反向结果数</small></th>
+          <th>% Counter<br><small>反向结果率</small></th>
+        </tr></thead>
+        <tbody><tr class="group"><th colspan="6">Market conditions｜市场条件</th></tr><tr class=""><td><span class="en">Composite measure of demand and price changes</span><span class="zh">需求与价格变化的综合指标</span></td><td class="num">8</td><td class="num">2</td><td class="num rate">25%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Demand changes</span><span class="zh">需求变化</span></td><td class="num">6</td><td class="num">2</td><td class="num rate">33%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Price changes</span><span class="zh">价格变化</span></td><td class="num">5</td><td class="num">0</td><td class="num rate">0%</td><td class="num">1</td><td class="num">20%</td></tr><tr class=""><td><span class="en">Unpredictability of customers</span><span class="zh">客户的不可预测性</span></td><td class="num">5</td><td class="num">3</td><td class="num rate">60%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Total transaction volume</span><span class="zh">总交易量</span></td><td class="num">1</td><td class="num">0</td><td class="num rate">0%</td><td class="num">0</td><td class="num">0%</td></tr><tr class="subtotal"><td>Subtotal｜小计</td><td class="num">25</td><td class="num">7</td><td class="num rate">28%</td><td class="num">1</td><td class="num">4%</td></tr><tr class="group"><th colspan="6">Technology｜技术</th></tr><tr class=""><td><span class="en">Volatility</span><span class="zh">技术波动性</span></td><td class="num">18</td><td class="num">3</td><td class="num rate">17%</td><td class="num">2</td><td class="num">11%</td></tr><tr class=""><td><span class="en">Novelty</span><span class="zh">技术新颖性</span></td><td class="num">7</td><td class="num">1</td><td class="num rate">14%</td><td class="num">2</td><td class="num">29%</td></tr><tr class=""><td><span class="en">Competition in supply of needed technology</span><span class="zh">所需技术供给的竞争程度</span></td><td class="num">3</td><td class="num">0</td><td class="num rate">0%</td><td class="num">2</td><td class="num">67%</td></tr><tr class="subtotal"><td>Subtotal｜小计</td><td class="num">28</td><td class="num">4</td><td class="num rate">14%</td><td class="num">6</td><td class="num">21%</td></tr><tr class="group"><th colspan="6">Behavioral｜行为</th></tr><tr class=""><td><span class="en">Number of users/customers for the part or product</span><span class="zh">零部件或产品的使用者／客户数量</span></td><td class="num">7</td><td class="num">1</td><td class="num rate">14%</td><td class="num">3</td><td class="num">43%</td></tr><tr class=""><td><span class="en">Cross-border transaction</span><span class="zh">跨境交易</span></td><td class="num">1</td><td class="num">0</td><td class="num rate">0%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Time from initial contact to transaction</span><span class="zh">从初次接触到完成交易的时间</span></td><td class="num">1</td><td class="num">1</td><td class="num rate">100%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Supplier unpredictability</span><span class="zh">供应商的不可预测性</span></td><td class="num">1</td><td class="num">0</td><td class="num rate">0%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Decision making uncertainty of buyer</span><span class="zh">买方决策不确定性</span></td><td class="num">1</td><td class="num">0</td><td class="num rate">0%</td><td class="num">1</td><td class="num">100%</td></tr><tr class="subtotal"><td>Subtotal｜小计</td><td class="num">11</td><td class="num">2</td><td class="num rate">18%</td><td class="num">4</td><td class="num">36%</td></tr><tr class="group"><th colspan="6">Other measures｜其他指标（原表未另设小计）</th></tr><tr class=""><td><span class="en">Performance ambiguity of transacting parties</span><span class="zh">交易双方的绩效模糊性</span></td><td class="num">6</td><td class="num">4</td><td class="num rate">67%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Regulatory uncertainty</span><span class="zh">规制不确定性</span></td><td class="num">4</td><td class="num">0</td><td class="num rate">0%</td><td class="num">2</td><td class="num">50%</td></tr><tr class=""><td><span class="en">Technological and market volatility (composite)</span><span class="zh">技术与市场波动（综合指标）</span></td><td class="num">3</td><td class="num">1</td><td class="num rate">33%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Component complexity</span><span class="zh">零部件复杂性</span></td><td class="num">2</td><td class="num">0</td><td class="num rate">0%</td><td class="num">1</td><td class="num">50%</td></tr><tr class=""><td><span class="en">Transaction idiosyncrasy</span><span class="zh">交易特异性</span></td><td class="num">2</td><td class="num">1</td><td class="num rate">50%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Prior experience of firm in production category</span><span class="zh">企业在相关生产类别中的既往经验</span></td><td class="num">2</td><td class="num">0</td><td class="num rate">0%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Prior experience of firm with alliances</span><span class="zh">企业以往的联盟经验</span></td><td class="num">1</td><td class="num">0</td><td class="num rate">0%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Currency risk</span><span class="zh">汇率风险</span></td><td class="num">1</td><td class="num">1</td><td class="num rate">100%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Firm risk</span><span class="zh">企业风险</span></td><td class="num">1</td><td class="num">0</td><td class="num rate">0%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Political risk</span><span class="zh">政治风险</span></td><td class="num">1</td><td class="num">1</td><td class="num rate">100%</td><td class="num">0</td><td class="num">0%</td></tr><tr class="total"><td>合计 / Total</td><td class="num">87</td><td class="num">21</td><td class="num rate">24%</td><td class="num">14</td><td class="num">16%</td></tr></tbody>
+      </table>
+    </div>
+    
+    <div class="findings">
+      <h3>作者对 Table 5 的重要结论</h3>
+      <ul>
+        <li><strong>技术波动性是最常用的不确定性指标。</strong>它出现在18项统计检验中，但只有3项支持理论，另有2项检验的显著结果方向与理论预测相反；其支持率为17%。</li>
+        <li><strong>作者举出的技术不确定性研究结果并不一致。</strong>Majumdar和Ramaswamy（1994b）发现，快速技术变化情境下，企业更可能将分销活动纳入内部；而Robertson和Gatignon（1998）发现，技术变化速度与采用联盟（混合型治理）而非内部研发相关。</li>
+        <li><strong>需求与价格变化的综合指标是第二常用的测量方式。</strong>该指标有8项检验，其中2项支持理论。Pillings、Crosby和Jackson（1994）以及Artz和Brush（2000）发现，这类不确定性提高了买方与供应商之间的谈判成本。</li>
+        <li><strong>总体支持率较低。</strong>Table 5合计87项检验，21项支持理论，支持率为24%；14项结果与理论方向相反，占16%。</li>
+        <li><strong>作者在全文讨论中强调，不确定性的作用不能脱离条件来理解。</strong>作者认为，已有研究中不确定性与治理形式选择、交易成本之间没有呈现清晰关系；相关支持率均低于50%，并且存在相当数量方向相反的结果。资产专用性与不确定性的交互作用检验也呈现混合结果，支持率约在50%左右。</li>
+      </ul>
+      <div class="source-page">作者正文讨论：David &amp; Han（2004），pp.47–48、p.52；表格数据：Table 5，p.50。</div>
+    </div>
+  </section>
+
+  <section class="section" id="transaction">
+    <div class="section-head">
+      <div class="num-badge">03</div>
+      <div>
+        <h2>交易成本（Transaction Costs）的测量</h2>
+        <p class="section-desc">原文 Table 6 · Transaction costs as an independent variable · 第50页</p>
+      </div>
+    </div>
+    <p>这一部分汇总的是研究者试图<strong>直接测量交易成本</strong>的指标，而不是通过资产专用性、不确定性等交易特征间接刻画交易成本。</p>
+    
+<div class="table-wrap">
+<table id="transaction-table">
+<thead><tr>
+<th>测量指标（英文原文／中文译名）</th>
+<th># Tests<br><small>检验数</small></th>
+<th># Supported<br><small>支持数</small></th>
+<th>% Supported<br><small>支持率</small></th>
+<th># Counter<br><small>反向结果数</small></th>
+<th>% Counter<br><small>反向结果率</small></th>
+</tr></thead>
+<tbody>
+<tr class=""><td><span class="en">Monitoring costs associated with transaction</span><span class="zh">与交易相关的监督成本</span></td><td class="num">11</td><td class="num">4</td><td class="num rate">36%</td><td class="num">1</td><td class="num">9%</td></tr><tr class=""><td><span class="en">Performance ambiguity of transacting parties</span><span class="zh">交易双方的绩效模糊性</span></td><td class="num">8</td><td class="num">4</td><td class="num rate">50%</td><td class="num">2</td><td class="num">25%</td></tr><tr class=""><td><span class="en">Costs to develop exchange relationship</span><span class="zh">建立交易关系的成本</span></td><td class="num">5</td><td class="num">3</td><td class="num rate">60%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Costs of guarding against opportunism</span><span class="zh">防范机会主义的成本</span></td><td class="num">5</td><td class="num">2</td><td class="num rate">40%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Complexity of transaction or alliance</span><span class="zh">交易或联盟的复杂性</span></td><td class="num">4</td><td class="num">3</td><td class="num rate">75%</td><td class="num">1</td><td class="num">25%</td></tr><tr class=""><td><span class="en">Appropriability hazard</span><span class="zh">可攫取性风险</span></td><td class="num">4</td><td class="num">2</td><td class="num rate">50%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">R&amp;D intensity of transaction</span><span class="zh">交易的研发强度</span></td><td class="num">4</td><td class="num">2</td><td class="num rate">50%</td><td class="num">2</td><td class="num">50%</td></tr><tr class=""><td><span class="en">Costs of switching transaction partners</span><span class="zh">更换交易伙伴的成本</span></td><td class="num">3</td><td class="num">1</td><td class="num rate">33%</td><td class="num">1</td><td class="num">33%</td></tr><tr class=""><td><span class="en">Redeployability of assets used in transaction</span><span class="zh">交易所用资产的可重新配置性</span></td><td class="num">3</td><td class="num">0</td><td class="num rate">0%</td><td class="num">1</td><td class="num">33%</td></tr><tr class=""><td><span class="en">Composite of costs to develop and monitor exchange relationship</span><span class="zh">建立和监督交易关系的综合成本</span></td><td class="num">1</td><td class="num">1</td><td class="num rate">100%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Marketing intensity in product category</span><span class="zh">产品类别的营销强度</span></td><td class="num">1</td><td class="num">1</td><td class="num rate">100%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Alignment of governance form with TCE predictions</span><span class="zh">治理形式与TCE预测的匹配程度</span></td><td class="num">1</td><td class="num">0</td><td class="num rate">0%</td><td class="num">0</td><td class="num">0%</td></tr><tr class=""><td><span class="en">Cultural distance between transacting parties</span><span class="zh">交易双方的文化距离</span></td><td class="num">1</td><td class="num">0</td><td class="num rate">0%</td><td class="num">1</td><td class="num">100%</td></tr>
+<tr class="total"><td>合计 / Total</td><td class="num">51</td><td class="num">23</td><td class="num rate">45%</td><td class="num">9</td><td class="num">18%</td></tr>
+</tbody>
+</table>
+</div>
+
+    <div class="findings">
+      <h3>作者对 Table 6 的重要结论</h3>
+      <ul>
+        <li><strong>监督成本是最常见的直接测量方式。</strong>共有11项检验测量与交易相关的监督成本，其中4项支持TCE。作者举例，Oxley（1999）发现，监督成本与企业选择合资企业而非市场契约相关。</li>
+        <li><strong>绩效模糊性是第二常见的测量方式。</strong>8项检验使用这一指标，其中4项支持TCE。作者举例，Poppo和Zenger（1998）发现，绩效模糊性降低了企业对市场契约绩效的满意度。</li>
+        <li><strong>作者尊重原研究者对指标的定义。</strong>论文脚注说明，只要原研究者声称自己测量的是交易成本，作者就按交易成本进行编码。作者还特别指出，绩效模糊性在其他研究中也被用来衡量不确定性；尽管可以将这些结果合并，作者仍选择遵循原作者的解释，不将它们合并分类。</li>
+        <li><strong>总体结果。</strong>Table 6共包含51项检验，其中23项支持理论，支持率45%；9项检验方向与理论预测相反，占18%。</li>
+      </ul>
+      <div class="source-page">作者正文讨论及脚注9、10：David &amp; Han（2004），p.48；表格数据：Table 6，p.50。</div>
+    </div>
+  </section>
+
+  <section class="source-card" id="notes">
+    <h3>数据说明与文献来源</h3>
+    <p><strong>原始文献：</strong>David, R. J., &amp; Han, S.-K. (2004). A systematic assessment of the empirical support for transaction cost economics. <em>Strategic Management Journal, 25</em>(1), 39–58. https://doi.org/10.1002/smj.359</p>
+    <p><strong>表格页码：</strong>资产专用性 Table 4，p.49；不确定性 Table 5，p.50；交易成本 Table 6，p.50。</p>
+    <p><strong>整理原则：</strong>统计数值以原文表格为准；英文指标保留原文拼写，中文为便于阅读的对应译名；作者的结论以论文正文和脚注为依据。未将原文未提供的测量定义、计算公式或变量编码方式自行补入。</p>
+    <p><strong>阅读提醒：</strong>各测量指标的检验数不同，部分指标仅有1项检验。单项指标出现100%支持率，并不意味着其证据基础比拥有更多检验的指标更充分。</p>
+  </section>
+</main>
+<footer>
+  <div class="wrap">依据用户提供的 David-SystematicAssessmentEmpirical-2004.pdf 整理 · 文件名：index.html</div>
+</footer>
+</body>
+</html>
 
